@@ -1,0 +1,19 @@
+#B
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  string S , X;
+  int K;
+  cin >> K >> S;
+
+  if(S.size() <= K){
+    cout << S << endl;
+  }
+  if(S.size() > K){
+    for(int i = 0; i < K; i++){
+      X += S.at(i);
+    }
+    cout << X + "..." << endl;
+  }
+}
