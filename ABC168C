@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+  long double A, B, H, M, X;
+  cin  >> A >> B >> H >> M;
+  X = H * 3600.0 + M *60.0;
+  long double a, b;
+  a = 360.0 * X / 43200.0;
+  b = 360.0 * M * 60.0 / 3600.0;
+
+
+  long double c , C;
+  if(abs(a - b) <= 180.0){
+  	c = abs(a - b);
+  	C = sqrt(A*A + B*B - 2.0*A*B*cos(2.0*M_PI*c/360.0));
+    cout << fixed << setprecision(20);
+  	cout << C << endl;
+  }
+  if(abs(a - b) > 180.0){
+    long double ma, mi;
+    ma = max(a,b);
+    mi = min(a,b)+360.0;
+    c = abs(ma - mi);
+  	C = sqrt(A*A + B*B - 2.0*A*B*cos(2.0*M_PI*c/360.0));
+    cout << fixed << setprecision(20);
+  	cout << setprecision(15) << C << endl;
+  }
+}
