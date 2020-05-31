@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+  long long N;
+  cin >> N;
+  vector<long long> vec(N);
+  
+  for(long long i = 0; i < N; i++){
+    cin >> vec.at(i);
+  }
+  
+  long long S = 1;
+  long long i = 0;
+  int a = 0;
+  while(i<N){
+    S *= vec.at(i);
+    i++;
+    if(S < 0 || S > 1000000000000000000){
+      a = 2;
+      break;
+    }
+  }
+  for(int64_t i = 0; i < N; i++){
+    if(vec.at(i) == 0){
+      a = 1;
+      break;
+    }
+  }
+  
+  if(a == 1){
+    cout << 0 << endl;
+  }
+  if(a == 2){
+    cout << -1 << endl;
+  }
+  if(a == 0){
+    cout << S << endl;
+  }
+}
