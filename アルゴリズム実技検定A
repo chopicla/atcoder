@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdlib>
+
+#include <algorithm>
+#include <string>
+
+int
+main (int argc, char *argv[])
+{
+	std::string s,t;
+  	std::cin >> s;
+    std::cin >> t;
+  	if(s==t){
+      std::cout << "same" << std::endl;}
+  
+    else{
+	transform (s.begin(), s.end(), s.begin(), toupper);
+	transform (t.begin(), t.end(), t.begin(), toupper);
+      if(s==t){
+      std::cout << "case-insensitive" << std::endl;
+      }
+      if(s!=t){
+      std::cout << "different" << std::endl;
+      } 
+    }
+}
