@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  long long N, M, Q;
+  cin >> N >> M >> Q;
+  
+  vector<string> vec(Q+1);
+  for(int i = 0; i < Q+1; i++){
+    getline(cin,vec.at(i));
+  }
+  
+  vector<int> vec2(N);
+  for(int i = 0; i < Q; i ++){
+    vec2.at(i) = 0;
+  }
+
+  for(int i = 1; i < Q+1; i++){
+    if(vec.at(i).at(0) == 1){
+      vec.at(i).at()
+}
+#無理
