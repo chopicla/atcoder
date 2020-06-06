@@ -17,4 +17,4 @@ int main() {
   }
   cout << S << endl;
 }
-##TLE & 1コ
+##TLE & WA1コ
