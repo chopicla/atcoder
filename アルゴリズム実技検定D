@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int N;
+  cin >> N;
+  vector<vector<char>> data(5, vector<char>(4*N+1));
+  for (int i = 0; i < 5; i++) {
+      for (int j = 0; j < 4*N+1; j++) {
+        cin >> data.at(i).at(j);
+      }
+  }
+  
+  int A = 0;
+  vector<int> vec(4*N+1);
+  for(int i = 0; i < 5; i++){
+    for(int j = 0; j < 4*N+1; j++){
+      if(data.at(i).at(j) == '.'){
+        A++;
+      }
+      vec.at(i) = A;
+      A = 0;
+    } 
+  }
+  for(int i = 0; i < 4*N+1; i++){
+    cout << vec.at(i);
+  }
+}
+##無理
