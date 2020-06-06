@@ -1,19 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-  long long A, R, N;
+  int64_t A, R, N;
   cin >> A >> R >> N;
   
-  long long S = 1;
+  int64_t S = 0;
  
   if(R == 1){
     cout << A << endl;
     return 0;
   }
+  else if(N == 1){
+    cout << A << endl;
+    return 0;
+  }
   else{
-    for(long long i = 1; i <= N; i++){
-      if(S*R <= 10000000000){
-        S  = A * pow(R,i-1);
+    for(int64_t i = 0; i < N; i++){
+      if(S <= 1000000000/R){
+        S  = A * pow(R,i);
       }
       else{
         cout << "large" <<endl;
