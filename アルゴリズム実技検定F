@@ -25,8 +25,6 @@ int main() {
       return 0;
     }
     else{
-      A = "";
-      B = "";
       count++;
     }
   }
@@ -44,8 +42,6 @@ int main() {
       return 0;
     }
     else{
-      A = "";
-      B = "";
       count++;
     }
   }
@@ -61,12 +57,10 @@ int main() {
     cout << A << endl;
       count = 0;
       return 0;
-    }
-    else{
-      A = "";
-      B = "";
+  }
+  else{
       count++;
-    }
+  }
 //斜めチェック
   for(int i = 0; i < N; i++){
     A.push_back(data.at(N-1-i).at(i));
@@ -76,12 +70,10 @@ int main() {
     cout << A << endl;
       count = 0;
       return 0;
-    }
-    else{
-      A = "";
-      B = "";
-      count++;
-    }
+  }
+  else{
+    count++;
+  }
   
   if(count != 0){
     cout << -1 << endl;
