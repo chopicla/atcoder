@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+  int N,M;
+  scanf("%d %d", &N, &M);
+  
+  vector<vector<int>> data(M, vector<int>(2));
+  
+  for(int i = 0; i < M; i++){
+    for(int j = 0; j < 2; j++){
+      scanf("%d", &data.at(i).at(j));
+    }
+  }
+  
+  vector<int> vecL(M);
+  vector<int> vecR(M);
+  for(int i = 0; i < M; i++){
+    vecL.at(i) = data.at(i).at(0);
+    vecR.at(i) = data.at(i).at(1);  
+  }
+  
+  sort(vecL.begin(), vecL.end());
+  sort(vecR.begin(), vecR.end());
+  
+  int ans = vecR.at(0) - vecL.at(M-1) + 1;
+  int S = max(ans, 0);
+  cout << S << endl; 
+}
