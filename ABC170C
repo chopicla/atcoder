@@ -28,12 +28,14 @@ int main() {
   int j = 0;
     while(X + i < 100){
     	if((X + i) - vec2.at(X + i) == 0){
-      		break;
+      		i++;
+          break;
     	}
   	}
   	while(X - j >= 0){
     	if((X - j) - vec2.at(X - j) == 0){
-      		break;
+      		j++;
+          break;
     	}
   	}
     int A = X + i;
