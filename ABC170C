@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int X,N;
+  scanf("%d %d", &X,&N);
+  vector<int> vec1(N);
+  vector<int> vec2(100);
+  
+  for(int i = 0; i < N; i++){
+    cin >> vec1.at(i);
+  }
+  
+  for(int i = 0; i < N; i++){
+    vec2.at(i) = i + 1;
+  }
+  
+  for(int i = 0; i < N; i++){
+    vec2.at(vec1.at(i)) = -1000;
+  }
+  
+  if(N == 0){
+    cout << X;
+    return 0;
+  }
+  else{
+  int i = 0;
+  int j = 0;
+    while(X + i < 100){
+    	if((X + i) - vec2.at(X + i) == 0){
+      		break;
+    	}
+  	}
+  	while(X - j >= 0){
+    	if((X - j) - vec2.at(X - j) == 0){
+      		break;
+    	}
+  	}
+    int A = X + i;
+    int B = X - j;
+    if(i < j){
+      	cout << A;
+    }
+  	if(i > j){
+    	cout << B;
+  	}
+  	if(i == j){
+    	cout << B;
+  	}
+  }
+}
+時間切れ
