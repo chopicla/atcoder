@@ -1,0 +1,33 @@
+#define _GLIBCXX_DEBUG
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+  int N;
+  cin >> N;
+  vector<int> a(N);
+  for(int i = 0; i < N; i++){
+    cin >> a.at(i);
+  }
+  int Q;
+  cin >> Q;
+  vector<pair<int,int>> BC(Q);
+  for(int i = 0; i < Q; i++){
+    int B;
+    int C;
+    cin >> B >> C;
+    BC.at(i) = make_pair(B,C);
+  }
+  
+  for(int i = 0; i < Q; i++){
+    int S = 0;
+      for(int j = 0; j < N; j++){
+        if(a.at(j) == BC.at(i).first){
+          a.at(j) = BC.at(i).second;
+        }
+        S += a.at(j);
+      }
+    cout << S << endl;
+  }
+}
+//計算量
