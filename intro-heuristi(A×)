@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+  int D;
+  cin >> D;
+  vector<pair<int, int>> c(26);
+  vector<vector<int>> s(D, vector<int>(26));
+  vector<int> t(D);
+  
+  for(int i = 0; i < 26; i++){
+    cin >> c.at(i).first;
+    c.at(i).second = 0;
+  }
+  
+  for(int i = 0; i < D; i++){
+    for(int j = 0; j < 26; j++){
+      cin >> s.at(i).at(j);
+    }
+  }
+  
+  for(int i = 0; i < D; i++){
+    t.at(i) = rand() % 26+1;
+  }
+  
+  int count = 0;
+  int S = 0;
+  vector<int> ans(D);
+  while(count++ < 100000){
+    
+  t.at((rand() % D+1)-1) = rand() % 26+1;
+
+  int Pl = 0;
+  int Mi = 0;
+  
+    for(int i = 0; i < D; i++){
+      Pl += s.at(i).at(t.at(i)-1);
+      c.at(t.at(i)-1).second = i + 1;
+      for(int j = 0; j < 26; j++){
+        Mi += c.at(j).first*(i+1 - c.at(j).second);
+      }
+      Pl -= Mi;
+      Mi = 0;
+    }
+  if(S < Pl){
+    S = Pl;
+    for(int i = 0; i < D; i++){
+      ans.at(i) = t.at(i);
+    }
+  }
+  else if(S >= Pl){
+    continue;
+  } 
+}
+  for(int i = 0; i < D; i++){
+    cout << ans.at(i) << endl;
+  }
+}
